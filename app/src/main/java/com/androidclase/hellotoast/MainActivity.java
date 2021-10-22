@@ -3,6 +3,7 @@ package com.androidclase.hellotoast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,16 +15,19 @@ public class MainActivity extends AppCompatActivity {
     private Button mCountButton;
     private TextView mShowCount;
     private String mCounterString;
-    private int mCounter;
+    private int mCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mCounter = 0;
-
         mShowCount = (TextView) findViewById(R.id.show_count);
+        if (savedInstanceState != null) {
+            mCounter = savedInstanceState.getInt("COUNTER", 0);
+            mShowCount.setText(String.valueOf(mCounter));
+        }
+
+        mCounterString = String.valueOf(mCounter);
 
         mToastButton = (Button) findViewById(R.id.button_toast);
         mToastButton.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 updateText();
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("COUNTER", mCounter);
     }
 
     public void updateText() {
