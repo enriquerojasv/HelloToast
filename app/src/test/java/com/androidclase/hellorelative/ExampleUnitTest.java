@@ -1,4 +1,4 @@
-package com.androidclase.hellotoast;
+package com.androidclase.hellorelative;
 
 import org.junit.Test;
 

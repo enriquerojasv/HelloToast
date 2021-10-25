@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="20dp">
-
+    tools:context=".MainActivity" >
     <Button
         android:id="@+id/button_toast"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/blue_back"
-        android:text="@string/toast_button"/>
-
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="Toast"
+        app:backgroundTint="#3F51B5" />
     <TextView
         android:id="@+id/show_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="20"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="180dp"
-        android:textColor="@color/blue_back"
-        android:background="@color/yellow"
-        android:text="@string/counter_text" />
-
+        android:layout_width="wrap_content"
+        android:layout_height="470dp"
+        android:layout_below="@+id/button_toast"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-98dp"
+        android:layout_marginEnd="205dp"
+        android:layout_marginRight="205dp"
+        android:background="#FFEB3B"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#3F51B5"
+        android:textDirection="firstStrongRtl"
+        android:textScaleX="1"
+        android:textSize="200sp"
+        tools:ignore="RtlCompat" />
     <Button
         android:id="@+id/button_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/blue_back"
-        android:text="@string/count_button"/>
-
-</LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/button_toast"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="322dp"
+        android:layout_marginRight="322dp"
+        android:text="Count"
+        app:backgroundTint="#3F51B5" />
+</RelativeLayout>
